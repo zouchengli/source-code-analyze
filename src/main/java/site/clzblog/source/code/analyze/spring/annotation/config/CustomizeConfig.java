@@ -1,9 +1,6 @@
 package site.clzblog.source.code.analyze.spring.annotation.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Service;
 import site.clzblog.source.code.analyze.spring.annotation.entity.UserEntity;
 
@@ -13,6 +10,7 @@ import site.clzblog.source.code.analyze.spring.annotation.entity.UserEntity;
         useDefaultFilters = false)
 public class CustomizeConfig {
     @Bean
+    @Conditional(CustomizeConditional.class)
     UserEntity userEntity() {
         return new UserEntity(1L, "Test");
     }
