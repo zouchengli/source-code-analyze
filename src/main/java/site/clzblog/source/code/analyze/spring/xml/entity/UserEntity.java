@@ -1,6 +1,10 @@
 package site.clzblog.source.code.analyze.spring.xml.entity;
 
 public class UserEntity {
+
+    public UserEntity() {
+    }
+
     private Long id;
     private String name;
 
