@@ -9,6 +9,7 @@ import site.clzblog.source.code.analyze.list.array.ArrayList;
 import site.clzblog.source.code.analyze.list.linked.LinkedList;
 import site.clzblog.source.code.analyze.map.Map;
 import site.clzblog.source.code.analyze.map.array.ArrayListHashMap;
+import site.clzblog.source.code.analyze.map.hash.HashMap;
 import site.clzblog.source.code.analyze.map.linked.LinkedListHashMap;
 import site.clzblog.source.code.analyze.mybatis.entity.UserEntity;
 import site.clzblog.source.code.analyze.mybatis.mapper.UserMapper;
@@ -17,6 +18,15 @@ import java.io.IOException;
 
 public class MybatisSourceCodeTests {
     public static void main(String[] args) {
+        Map<Object, String> map = new HashMap<>();
+        map.put("a", "testA");
+        map.put(97, "testB");
+        for (int i = 0; i < 10; i++) {
+            map.put(i, "test" + i);
+        }
+        map.put(null, "xixi");
+        map.put(null, "bb");
+        System.out.println(map.get(null));
     }
 
     public static void test000() {

@@ -5,8 +5,6 @@ import site.clzblog.source.code.analyze.spring.reference.config.ReferenceConfig;
 import site.clzblog.source.code.analyze.spring.reference.service.AService;
 import site.clzblog.source.code.analyze.spring.reference.service.BService;
 
-import java.util.Arrays;
-
 public class ReferenceMain {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ReferenceConfig.class);
@@ -14,6 +12,6 @@ public class ReferenceMain {
         BService bService = context.getBean("BService", BService.class);
         aService.setBService(bService);
         bService.setAService(aService);
-        Arrays.asList(context.getBeanDefinitionNames()).forEach(System.out::println);
+        //Arrays.asList(context.getBeanDefinitionNames()).forEach(System.out::println);
     }
 }
